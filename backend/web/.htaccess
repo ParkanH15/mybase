@@ -1,0 +1,12 @@
+AddDefaultCharset utf-8
+
+AddCharset UTF-8 .json
+
+RewriteEngine on
+
+# если файл или директория существуют, отдать их напрямую
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# в противном случае вызвать index.php
+RewriteRule . index.php
